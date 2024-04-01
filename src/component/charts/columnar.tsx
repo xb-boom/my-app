@@ -165,6 +165,7 @@ const AEchars: React.FC = () => {
         legend: {
             data: ['借款笔数', '还款笔数', '投资笔数']
         },
+        color: ['#c7eaa2','#88c2ef','#eec596'],
         xAxis: {
             type: 'category',
             data: ['一月', '二月', '三月', '四月', '五月', '六月']
@@ -181,6 +182,7 @@ const BEchars: React.FC = () => {
         tooltip: {
             trigger: 'item'
         },
+        color: ['#c7eaa2','#88c2ef','#eec596'],
         legend: {
             top: '5%',
             left: 'center'
