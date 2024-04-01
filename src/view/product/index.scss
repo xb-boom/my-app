@@ -1,0 +1,19 @@
+.MyTableGrid {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+
+    .title {
+        font-size: 18px;
+    }
+}
+
+.addUser {
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    color: white;
+    background-color: #005aff;
+    margin-bottom: 16px;
+    cursor:pointer;
+}

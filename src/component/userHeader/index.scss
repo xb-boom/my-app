@@ -1,0 +1,33 @@
+.userImage{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    p{
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 10px;
+    }
+}
+.userArr{
+    width: 100%;
+    display: flex;
+    // background-color: red;
+    flex-wrap: wrap;
+    justify-content: center;
+    .user_item{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        img{
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        span{
+            font-weight: 600;
+        }
+    }
+}

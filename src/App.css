@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* color #005aff; */  
+/* bgcolor #0059ff26 */
+/* title font-size 18px */
+
+
+
+/*  input获取焦点后取消默认样式  有个占位符，页面会抖动 */
+/* 清除 input 的默认样式 */  
+input {  
+  border: none; /* 移除边框 */  
+  outline: none; /* 移除轮廓 */  
+  background-color: transparent; /* 透明背景 */  
+  padding: 0; /* 移除内边距 */  
+  margin: 0; /* 移除外边距 */  
+  box-shadow: none; /* 移除阴影 */  
+  font-size: inherit; /* 继承字体大小 */  
+  color: inherit; /* 继承文本颜色 */  
+  -webkit-appearance: none; /* 移除 Safari 上的默认样式 */  
+}  
+
+/* 清除 button 的默认样式 */  
+button {  
+  cursor: pointer;
+  border: none; /* 移除边框 */  
+  outline: none; /* 移除轮廓 */  
+  background-color: transparent; /* 透明背景 */  
+  padding: 0; /* 移除内边距 */  
+  margin: 0; /* 移除外边距 */  
+  box-shadow: none; /* 移除阴影 */  
+  font-size: inherit; /* 继承字体大小 */  
+  color: inherit; /* 继承文本颜色 */  
+  -webkit-appearance: none; /* 移除 Safari 上的默认样式 */  
+}
+/* 修改input占位符样式 */
+input::placeholder {
+  padding-left: 5px;
+  box-sizing: border-box;
+  color: #CCCCCC;
+}
+/* WebKit, Blink, Edge浏览器，带input，双冒号 */
+input::-webkit-input-placeholder{ 
+  padding-left: 5px;
+  box-sizing: border-box;
+  color: #CCCCCC;
+}
+/* 火狐浏览器高版本（19+），不用带input，双冒号 */
+input::-moz-placeholder{ 
+  padding-left: 5px;
+  box-sizing: border-box;
+  color: #CCCCCC;
+}
+/* 火狐浏览器底版本（4 to 18），不用带input，单冒号 */
+input:-moz-placeholder{ 
+  padding-left: 5px;
+  box-sizing: border-box;
+  color: #CCCCCC;
+}
+/* IE浏览器底版本（10-11），带input，单冒号 */
+input:-ms-input-placeholder{  
+  padding-left: 5px;
+  box-sizing: border-box;
+  color: #CCCCCC;
+}
+/* 修改input获取焦点后的样式 */
+input:focus{
+  box-shadow: 0px 0px 5px 0px rgba(64, 159, 255,0.25);
+  border:none;
+  outline:1px solid #409EFF
+}
+/* 修改input获取焦点后占位符消失 */
+input:focus::-webkit-input-placeholder{
+  color:transparent;
+}
+

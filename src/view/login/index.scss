@@ -1,0 +1,72 @@
+.loginPage{
+    background-image: url('../../assets/image/bgImage.jpg');
+    background-position: center top; /* 背景图片定位到元素顶部中央 */  
+    background-repeat: no-repeat; /* 背景图片不重复 */  
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loginModal{
+        width: 700px;
+        height: 450px;
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        border:1px solid #878787;
+        display: flex;
+        .loginImage{
+            height: 100%;
+            width: 230px;
+            border-right:1px solid #878787;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            p{
+                margin-top: 5px;
+                font-size: 20px;
+                color: white;
+            }
+        }
+        .loginForm{
+            height: 100%;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .formUtils{
+                color: #f3f3f3;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 300px;
+                input{
+                    height: 40px;
+                    width: 340px;
+                    border: none;
+                    border-radius:20px;
+                    padding: 0 10px;
+                    background-color: #f3f3f3;
+                    color:black
+                }
+                p{
+                    width: 350px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                button{
+                    height: 40px;
+                    width: 350px;
+                    border: none;
+                    border-radius: 20px;
+                    background-color: #0958d9;
+                    margin: -20px 0;
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,91 @@
+// // 组件库样式修改
+
+// 菜单栏样式修改
+:where(.css-dev-only-do-not-override-42nv3w).ant-menu-inline .ant-menu-item{
+    color: #3e3e3e;
+}
+:where(.css-dev-only-do-not-override-42nv3w).ant-menu-light .ant-menu-item-selected, :where(.css-dev-only-do-not-override-42nv3w).ant-menu-light>.ant-menu .ant-menu-item-selected{
+    color: #005aff;
+    background: linear-gradient(-45deg, white, #0059ff26); 
+    
+}
+
+:where(.css-dev-only-do-not-override-42nv3w).ant-menu-inline .ant-menu-item,
+:where(.css-dev-only-do-not-override-42nv3w).ant-menu-inline >.ant-menu-item, 
+:where(.css-dev-only-do-not-override-42nv3w).ant-menu-vertical >.ant-menu-item, 
+:where(.css-dev-only-do-not-override-42nv3w).ant-menu-inline >.ant-menu-submenu>.ant-menu-submenu-title, 
+:where(.css-dev-only-do-not-override-42nv3w).ant-menu-vertical >.ant-menu-submenu>.ant-menu-submenu-title{
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+@keyframes fadeIn {
+    0% {
+        // opacity: 0;
+        display: none;
+    }
+
+    100% {
+        // opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        // opacity: 1;
+        display: block;
+    }
+
+    100% {
+        // opacity: 0;
+        display: none;
+    }
+}
+.demo-logo-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: black;
+    // border-bottom: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+    height: 64px;
+    width: 100%;
+
+    img {
+        height: 64px;
+        width: 220px;
+        object-fit: cover;
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: 700;
+        display: block;
+        animation-duration: 0.5s;
+        /* 动画持续时间 */
+        animation-fill-mode: forwards;
+        /* 保持动画结束时的状态 */
+        animation-name: fadeIn;
+        /* 应用 fadeIn 动画 */
+        transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), margin 0.3s, color 0.3s;
+
+    }
+
+    .demo-name-hidden {
+        display: none;
+        animation-name: fadeOut;
+        /* 应用 fadeOut 动画 */
+    }
+
+}
+
+// 表格样式修改
+:where(.css-dev-only-do-not-override-42nv3w).ant-table-wrapper .ant-table-thead >tr>th, :where(.css-dev-only-do-not-override-42nv3w).ant-table-wrapper .ant-table-thead >tr>td{
+    background:none;
+}
+:where(.css-dev-only-do-not-override-42nv3w).ant-table-wrapper .ant-table-tbody >tr >th, :where(.css-dev-only-do-not-override-42nv3w).ant-table-wrapper .ant-table-tbody >tr >td{
+    border: none;
+}

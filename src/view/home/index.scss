@@ -1,0 +1,23 @@
+.grid{
+    display: flex;
+    flex-wrap: nowrap;
+    .userData-wrap{
+        flex: 1;
+    }
+    .notice-wrap{
+        margin-left: 16px;
+        width: 300px;
+    }
+}
+.assetCardGrid{
+    display: flex;
+    justify-content: space-between;
+    .assetCard-wrap{
+       flex: 1;
+       margin-right: 16px;
+       &:last-of-type{
+        margin-right: 0;
+       }
+    }
+
+}

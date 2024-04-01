@@ -1,0 +1,57 @@
+// color: #005aff;
+.assetCard-wrap {
+    margin-top: 16px;
+    background-color: white;
+    height: 365px;
+    padding: 15px;
+    border-radius: 8px;
+
+    .title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .assetData {
+        margin-top: 20px;
+        .statistic-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .percentage{
+            color: #87d068;
+            padding: 2px 5px;
+            border-radius: 30px;
+            background-color: #87d06854;
+            .span{
+                color: black;
+            }
+        }
+    }
+    .progress{
+        height: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .assetCard-btn{
+        margin-top: 10px;
+       button{
+        height: 30px;
+        width: 80px;
+        border-radius: 15px;
+        border: none;
+        background-color: #005affd4;
+        color: white;
+        font-size: 14px;
+       }
+
+
+    }
+}
+.assetCard-wrap {
+    &:hover{
+        background: linear-gradient(-45deg, white, #005aff); 
+        color: white;
+    }
+}
