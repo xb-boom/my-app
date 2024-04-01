@@ -5,12 +5,6 @@ type MyContextProps = {
   isLoading: boolean;  
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;  
 
-  // 输入表单
-  FormData:{
-    name:string,
-    mobile:string,
-  }
-  setFormData:(newValue:{name:string,mobile:string}) => void
 };  
   
 const MyContext = createContext<MyContextProps | null>(null);  
@@ -24,16 +18,10 @@ export const useMyContext = () => {
 };  
   
 export const MyContextProvider = ({ children }: { children: ReactNode }) => {  
-  const [isLoading, setLoading] = useState(false);  
-  const [FormData, setFormData] = useState({
-    name:'',
-    mobile:''
-  });  
+  const [isLoading, setLoading] = useState(false);   
   const contextValue: MyContextProps = {  
     isLoading,
     setLoading,
-    FormData,
-    setFormData,
   };  
 
 

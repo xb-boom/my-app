@@ -69,6 +69,7 @@ function UserHeader() {
           ModalTitle={ModalTitle}
           ModalContent={ModalContent}
           width={400}
+          isFooter={true}
         />
       </div>
     </>
