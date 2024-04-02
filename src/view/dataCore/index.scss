@@ -8,7 +8,9 @@
         height: 100%;
         padding: 15px;
         border-radius: 8px;
-
+        .title{
+            font-size: 18px;
+        }
         &:nth-child(1) {
             flex: 1;
             margin-right: 16px;

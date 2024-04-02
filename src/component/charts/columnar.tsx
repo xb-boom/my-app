@@ -177,6 +177,7 @@ const AEchars: React.FC = () => {
     };
     return <EChartsReact options={options} style={{ width: '100%', height: 250 }} title='产品实时订单检测' />
 };
+
 const BEchars: React.FC = () => {
     const options = {
         tooltip: {
