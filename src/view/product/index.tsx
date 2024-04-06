@@ -1,12 +1,14 @@
 import React, { useState, useEffect, ReactNode } from "react";
 import './index.scss'
 import MyTable from '../../component/table/index'
-import Modal from '../../component/modal'
+import ModalComponent from '../../component/modal'
 // import { useMyContext } from '../../utils/Mycontext'
+import { useLocation } from 'react-router-dom';
 import { Button, Form, type FormProps, Input, Col, Row, Radio, DatePicker } from 'antd';
 import {
     UserAddOutlined,
 } from '@ant-design/icons';
+
 
 type FieldType = {
     name?: string;
@@ -103,7 +105,6 @@ const AddUserForm: React.FC<ChildCompenontProps> = function ({ UpValueData }) {
                             </Form.Item>
                         )
                     })
-
                     // <Row>
                     //     <Col span={12}></Col>
                     //     <Col span={12}></Col>
@@ -119,16 +120,18 @@ const AddUserForm: React.FC<ChildCompenontProps> = function ({ UpValueData }) {
     )
 }
 
-const Product = function () {
-    const [isModal, setIsModal] = useState(false);
+const Product: React.FC = function () {
+    const location = useLocation();
+    const { state } = location;
+    const [isModal, setIsModal] = useState(state?.isModal || false);
     const [FromData, setFormData] = useState<FieldType>({
         name: '',
         mobile: '',
         sex: ''
     })
     useEffect(() => {
-        console.log(FromData)
-    }, [isModal])
+        // console.log(FromData)
+    }, [])
 
     // 这里要注意， 与取消按钮不同的是，要处理完确认按钮的事件，再去改变弹窗状态
     const handleValueChange = (newValue: boolean) => {
@@ -150,7 +153,7 @@ const Product = function () {
             <button className="addUser" onClick={TabModalState}><UserAddOutlined /> 客户信息录入</button>
             <MyTable />
             {
-                <Modal
+                <ModalComponent
                     isModalOpen={isModal}
                     changeModalState={handleValueChange}
                     ModalTitle={'用户信息录入'}

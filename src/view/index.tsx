@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import UserHeader from '../component/userHeader'
 import router from '../router/index'
@@ -14,23 +14,22 @@ const Index: React.FC = () => {
     } = theme.useToken();
 
     const MenuArray = router.routes[0].children?.slice(1);
-    const location = useLocation()
     // 解决刷新页面菜单栏选择目录不更新问题
-    const menuUrl = location.pathname === '/' ? '/index' : location.pathname
+    const location = useLocation()
+    const [Selectmenu,setSelectmenu] =  useState('')
     const { SubMenu } = Menu;
     useEffect(() => {
-
-    }, [menuUrl])
+        setSelectmenu(location.pathname)
+    }, [location])
     return (
         <>
             <Spin spinning={false} fullscreen />
             <Layout style={{ minHeight: '100vh' }}>
-                <Sider style={{ backgroundColor: 'white' }} width={220}>
+                <Sider style={{ backgroundColor: 'white' }} width={250}>
                     <div className="demo-logo-vertical">
                         <img src={logo} />
-                        {/* <span className={collapsed ? 'demo-name-hidden' : ''}>React App</span> */}
                     </div>
-                    <Menu mode="inline" defaultSelectedKeys={[menuUrl]} className="custom-menu">
+                    <Menu mode="inline" selectedKeys={[Selectmenu]} className="custom-menu">
                         {
                             MenuArray?.map((item: any) => {
                                 return (

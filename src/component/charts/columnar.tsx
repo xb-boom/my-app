@@ -34,7 +34,7 @@ const EChartsReact: React.FC<EChartsReactProps> = ({ options, style, className, 
             <h5 className='title'>
                 {title}
             </h5>
-            <div ref={chartRef} style={style} className={className} />;
+            <div ref={chartRef} style={style} className={className} />
         </div>
     )
 };

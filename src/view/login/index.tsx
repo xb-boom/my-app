@@ -1,12 +1,14 @@
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './index.scss'
 import { useMyContext } from '../../utils/Mycontext'
 
 const LoginPage = () => {
     const { setLoading } = useMyContext();
+    useEffect(()=>{
+    },[])
     type userInfoType = {
         userName: string,
         passWord: string,
