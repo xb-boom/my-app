@@ -2,6 +2,8 @@ import React, { useEffect, ReactNode, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import DrawerComponent from '../drawer/index'
 import ModalComponent from '../modal'
+// 定义一个消息列表
+import { Avatar } from 'antd';
 import './index.scss'
 // import axios from 'axios';
 import {
@@ -11,7 +13,9 @@ import {
     ApartmentOutlined,
     AccountBookOutlined,
     CommentOutlined,
-    CopyOutlined
+    CopyOutlined,
+    UserOutlined,
+    BellTwoTone
 } from '@ant-design/icons';
 interface ChildCompenontProps {
     // isModalOpen: boolean,
@@ -24,6 +28,18 @@ interface utils {
     icon: ReactNode
     isAdd?: boolean,
     click?: () => void
+}
+
+interface MessageListParams {
+    id: number,
+    icon: ReactNode,
+    time: string,
+    name: string,
+    tip: string,
+    number: number
+}
+interface ChildrenMessageList {
+    MessageList: Array<MessageListParams>
 }
 
 const CommonUtils: React.FC<ChildCompenontProps> = function () {
@@ -84,6 +100,32 @@ const CommonUtils: React.FC<ChildCompenontProps> = function () {
 
     ]
 
+    const MessageList: Array<MessageListParams> = [
+        {
+            id: 1,
+            icon: <UserOutlined />,
+            time: '08月07日 12:00:06',
+            name: '王先生',
+            tip: '办公资产',
+            number: 1000
+        },
+        {
+            id: 2,
+            icon: <UserOutlined />,
+            time: '08月07日 12:00:06',
+            name: '王先生',
+            tip: '办理定期存款',
+            number: 1000
+        },
+        {
+            id: 3,
+            icon: <UserOutlined />,
+            time: '08月07日 12:00:06',
+            name: '王先生',
+            tip: '办公资产',
+            number: 1000
+        },
+    ]
     useEffect(() => {
 
     }, [])
@@ -107,8 +149,8 @@ const CommonUtils: React.FC<ChildCompenontProps> = function () {
                     }
                 </ul>
             </div>
-            <DrawerComponent isDrawer={isDrawer} onCloseDrawer={onCloseDrawer} title="消息通知" children={<div>暂无消息</div>} />
-            <ModalComponent 
+            <DrawerComponent isDrawer={isDrawer} onCloseDrawer={onCloseDrawer} title={<><BellTwoTone/> 消息通知</>} children={<DrawerComponentChildren MessageList={MessageList} />} />
+            <ModalComponent
                 isModalOpen={isModal}
                 changeModalState={handleValueChange}
                 ModalTitle={'添加功能'}
@@ -118,6 +160,36 @@ const CommonUtils: React.FC<ChildCompenontProps> = function () {
         </>
     );
 
+}
+
+
+const DrawerComponentChildren: React.FC<ChildrenMessageList> = ({ MessageList }) => {
+    return (
+        <>
+            <ul>
+                {
+                    MessageList.map((item, idx) => {
+                        return (
+                            <li key={idx}>
+                                <div>
+                                    <Avatar size={26} icon={item.icon} />
+                                    {item.time}
+                                </div>
+                                <div>
+                                    <b>{item.name}</b>
+                                    <span>{item.tip}</span>
+                                </div>
+                                <div>
+                                    <b>{item.number}</b>
+                                    <button>已读</button>
+                                </div>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        </>
+    )
 }
 
 export default CommonUtils

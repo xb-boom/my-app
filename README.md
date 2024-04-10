@@ -1,6 +1,6 @@
 闲的无聊瞎写的，当废品看。
 color #005aff; */  
-黑色字体
-color ：#3e3e3e;
-bgcolor ：#0059ff26
-title font-size 18px
+黑色字体颜色#3e3e3e;
+浅色背景：#0059ff26
+标题字体 18px
+按钮背景颜色 #005affd4

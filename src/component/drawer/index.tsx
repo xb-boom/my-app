@@ -3,7 +3,7 @@ import { Button, Drawer } from 'antd';
 interface ChildCompenontProps {
   isDrawer: boolean
   onCloseDrawer: () => void
-  title: string
+  title: ReactNode
   children: ReactNode
 }
 const DrawerComponent: React.FC<ChildCompenontProps> = ({ isDrawer, onCloseDrawer, title, children }) => {
@@ -18,7 +18,7 @@ const DrawerComponent: React.FC<ChildCompenontProps> = ({ isDrawer, onCloseDrawe
 
   return (
     <>
-      <Drawer title={title} onClose={onCloseDrawer} open={isDrawer}>
+      <Drawer title={title} onClose={onCloseDrawer} open={isDrawer} closable={false}>
         {children}
       </Drawer>
     </>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, ReactNode } from 'react';
 import { Button, Modal } from 'antd';
-import { getUserArr } from '../mock/userInfo'
-import { useMyContext } from '../utils/Mycontext'
+import { getUserArr } from '../../mock/userInfo'
+import { useMyContext } from '../../utils/Mycontext'
 import axios from 'axios';
 
 interface ChildCompenontProps {
